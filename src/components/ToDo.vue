@@ -4,10 +4,10 @@
       <div v-if="!editing">
         <v-row class="d-flex justify-center">
           <v-col cols="8" md="2">
-          <v-text-field
-            label="Enter your Task"
-            v-model="new_todo"
-          ></v-text-field>
+            <v-text-field
+              label="Enter your Task"
+              v-model="new_todo"
+            ></v-text-field>
           </v-col>
           <v-col cols="1" md="1">
             <v-btn class="mx-1" large color="primary" @click="add_task"
@@ -19,12 +19,12 @@
       <div v-else>
         <v-row class="d-flex justify-center">
           <v-col cols="7" md="2">
-          <v-text-field
-            label="Update your Task"
-            large
-            color="primary"
-            v-model="edited_todo"
-          ></v-text-field>
+            <v-text-field
+              label="Update your Task"
+              large
+              color="primary"
+              v-model="edited_todo"
+            ></v-text-field>
           </v-col>
           <v-col cols="1" md="1">
             <v-btn @click="update_task">Update</v-btn>
@@ -57,7 +57,7 @@
               >
             </v-col>
             <v-col cols="4">
-              <v-btn icon color="red"  @click="remove_task(task)"
+              <v-btn icon color="red" @click="remove_task(task)"
                 >Remove <v-icon>mdi-delete</v-icon>
               </v-btn>
             </v-col>
@@ -66,27 +66,22 @@
       </transition-group>
     </div>
 
-    <v-footer
-      class="text-center"
-      color="primary lighten-1"
-      app
-      bottom
-      fixed
-      padless
-    >
-      <div class="my-7">
-        <h3>There are total {{ $store.getters.COUNT_TASKS }} Tasks</h3>
-        <v-btn color="white" text rounded class="my-2" @click="remove_all"
-          >RemoveAll</v-btn
-        >
-        <v-divider></v-divider>
-        <v-card-text
-          class="primary lighten-2 py-4 text-center white--text align-center"
-          align="center"
-        >
-          {{ new Date().getFullYear() }} — <strong>Albanero.io</strong>
-        </v-card-text>
-      </div>
+    <v-footer color="primary lighten-1" padless app bottom fixed>
+      
+      <v-row justify="center" no-gutters >
+        <div class="my-7">
+          <h3>There are total {{ $store.getters.COUNT_TASKS }} Tasks</h3>
+          <v-btn color="white" text rounded class="my-2" @click="remove_all"
+            >RemoveAll</v-btn
+          >
+          <v-col
+            class="primary lighten-2 py-4 text-center white--text align-center"
+            align="center"
+          >
+            {{ new Date().getFullYear() }} — <strong>Albanero.io</strong>
+          </v-col>
+        </div>
+      </v-row>
     </v-footer>
   </div>
 </template>
