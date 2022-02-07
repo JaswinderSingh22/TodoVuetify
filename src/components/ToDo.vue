@@ -69,14 +69,15 @@
     <v-footer color="primary lighten-1" padless app bottom fixed>
       
       <v-row justify="center" no-gutters >
-        <div class="my-7">
+        <div class="my-3">
           <h3>There are total {{ $store.getters.COUNT_TASKS }} Tasks</h3>
-          <v-btn color="white" text rounded class="my-2" @click="remove_all"
+          <v-btn color="white"  rounded class="my-2" @click="remove_all"
             >RemoveAll</v-btn
           >
+          
           <v-col
-            class="primary lighten-2 py-4 text-center white--text align-center"
-            align="center"
+            class="primary  py-4 text-center white--text align-center"
+            align="center" 
           >
             {{ new Date().getFullYear() }} — <strong>Albanero.io</strong>
           </v-col>
